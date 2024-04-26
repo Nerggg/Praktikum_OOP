@@ -1,5 +1,4 @@
 import java.util.*;
-import java.time.Instant;
 
 public class Pasukan {
     private List<Integer> list;
@@ -19,19 +18,19 @@ public class Pasukan {
 
     public long get(int idx) {
         reset();
-        long begin = Instant.now().toEpochMilli();
+        long begin = Util.getTime();
         list.get(idx);
-        long end = Instant.now().toEpochMilli();
+        long end = Util.getTime();
         return end-begin;
     }
     
     public long del(int idx, int t) {
         reset();
-        long begin = Instant.now().toEpochMilli();
+        long begin = Util.getTime();
         for (int i = 0; i < t; i++) {
             list.remove(idx);
         }
-        long end = Instant.now().toEpochMilli();
+        long end = Util.getTime();
         return end-begin;
     }
 }
